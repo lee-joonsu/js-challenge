@@ -1,13 +1,13 @@
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"]; //array임.
+const player = {
+  name: "nico",
+  points: 10,
+  fat: true,
+}; // object임.
+console.log(player);
+console.log(player.name); //object(player)안에 있는 property(name)를 부름.
 
-console.log(daysOfWeek);
-console.log(daysOfWeek[5]); //array 안에서 아이템을 받아오는 방법
-
-daysOfWeek.push("sun"); // array안에 요일 더 추가하기
-
-console.log(daysOfWeek);
-
-const toBuy = ["potato", "tomato", "pizza"];
-toBuy.push("kimbab");
-console.log(toBuy);
-console.log(toBuy[2]);
+player.fat = false; // fat이라는 프로퍼티의 값을 true에서 false로 바꿈(업데이트함).
+console.log(player);
+player.lastName = "potato"; // object에 lastName이라는 property와 그 값을 추가함.
+player.points = player.points + 15;
+console.log(player);
