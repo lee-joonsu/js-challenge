@@ -1,3 +1,13 @@
-const amIFat = null; //비어 있다기 보다는 amIFat변수를 아무것도 없는 걸로 채워 넣은 것임. 값은 있는데 "아무것도 아닌 것"임.
-let something; // 변수를 선언했지만 값을 할당하지 않음. undefined 
-console.log(something, amIFat); 
+const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"]; //array임.
+
+console.log(daysOfWeek);
+console.log(daysOfWeek[5]); //array 안에서 아이템을 받아오는 방법
+
+daysOfWeek.push("sun"); // array안에 요일 더 추가하기
+
+console.log(daysOfWeek);
+
+const toBuy = ["potato", "tomato", "pizza"];
+toBuy.push("kimbab");
+console.log(toBuy);
+console.log(toBuy[2]);
