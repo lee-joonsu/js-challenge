@@ -1,6 +1,8 @@
 const calculator = {
   plus: function (a, b) {
-    return a + b;
+    console.log("hello");
+    return a + b; // return을 하면 function은 작동을 멈추고 결과 값을 return하고 끝내버림.
+    console.log("bye bye"); // 콘솔 상에 나타나지 않음.
   },
   minus: function (a, b) {
     return a - b;
