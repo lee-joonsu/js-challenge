@@ -1,13 +1,19 @@
-const player = {
-  name: "nico",
-  points: 10,
-  fat: true,
-}; // object임.
-console.log(player);
-console.log(player.name); //object(player)안에 있는 property(name)를 부름.
+function sayHello(nameOfPerson, age) {
+  // 여기서의 sayHello()는 아래 값이나 데이터를 받음. 괄호 안에는 아무 값이나 변수가 들어갈 수 있음.
+  console.log("Hello my name is " + nameOfPerson + " and I'm " + age);
+}
 
-player.fat = false; // fat이라는 프로퍼티의 값을 true에서 false로 바꿈(업데이트함).
-console.log(player);
-player.lastName = "potato"; // object에 lastName이라는 property와 그 값을 추가함.
-player.points = player.points + 15;
-console.log(player);
+sayHello("nico", 10);
+sayHello("dal", 23);
+sayHello("lynn", 21); // 함수를 실행시킴. 괄호 안의 값이나 데이터를 function에 보냄.
+
+function plus(firstNumber, secondNumber) {
+  console.log(firstNumber + secondNumber);
+} // function 안에 있는 firstNumber와 secondNumber는 중괄호{} 밖에서 존재할 수 없음.
+
+function divide(a, b) {
+  console.log(a / b);
+}
+plus(); // NaN이 나옴. Not a Number(숫자가 아님)이라는 뜻
+plus(8, 60);
+divide(98, 20);
