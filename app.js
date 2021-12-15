@@ -1,10 +1,25 @@
-const age = 96;
-function calculateKrAge(ageOfForeigner) {
-  ageOfForeigner + 2; // function이 function의 밖과 소통하는 방법.
-  return "hello";
-} // 작업을 하고 그 작업의 결과를 알려주는 function
+const calculator = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  times: function (a, b) {
+    return a * b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  power: function (a, b) {
+    return a ** b;
+  },
+};
 
-const krAge = calculateKrAge(age); // function을 호출하는 코드. function의 return 값이 됨.
-
-console.log(krAge);
-// function에서 console.log하는 것이 아니라 function의 return값과 같은 variable을 console.log하고 있음. 
+const plusResult = calculator.plus(2, 3);
+const minusResult = calculator.minus(plusResult, 10);
+const timesResult = calculator.times(10, minusResult);
+const divideResult = calculator.divide(timesResult, plusResult);
+const powerResult = calculator.power(divideResult, minusResult);
+// 변수들끼리 상호의존적임. function 안에서 console.log할 때와는 차원이 다름.
+// 원하는 변수만 콕 집어서 결과를 알 수 있음.
