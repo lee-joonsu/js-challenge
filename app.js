@@ -1,6 +1,4 @@
-const title = document.getElementById("title"); //HTML요소를 자바스크립트로 가져옴.
+const hellos = document.getElementsByClassName("hello"); // class는 많은 element를 한번에 가져올 수 있음.
+const title = document.querySelector(".hello h1"); // hello라는 class 내부에 있는 h1을 가져올 수 있다는 것을 의미.
 
-title.innerText = "Got you!"; // 자바스크립트를 통해 요소를 변경함.
-
-console.log(title.id);
-console.log(title.className);
+title.innerText = "hello";
