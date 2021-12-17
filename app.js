@@ -2,10 +2,10 @@ const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick() {
   const clickedClass = "clicked"
-  if (h1.className === clickedClass) {
-    h1.className = ""; // h1의 class name이 active라면 active를 제거하기 위해 h1.className을 비워줌.
+  if (h1.classList.contains(clickedClass)) {
+    h1.classList.remove(clickedClass); // h1의 class name이 active라면 active를 제거하기 위해 h1.className을 비워줌.
   } else {
-    h1.className = clickedClass
+    h1.classList.add(clickedClass);
   } // 만약 h1의 className이 없다면, class name을 active로 추가한다.
 }
 h1.addEventListener("click", handleTitleClick);
