@@ -1,14 +1,12 @@
-const h1 = document.querySelector("div.hello:first-child");
+const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick() {
-  const currentColor = h1.style.color; // element의 style을 자바스크립트에서 변경함. 별로 선호하지 않음.
-  let newColor; // newColor는 아무것도 없는 비어있는 let 변수임.
-  if (currentColor === "blue") {
-    newColor = "tomato"; //할당되지 않았던 newColor변수에 "tomato"라는 값을 할당함.
+  const clickedClass = "clicked"
+  if (h1.className === clickedClass) {
+    h1.className = ""; // h1의 class name이 active라면 active를 제거하기 위해 h1.className을 비워줌.
   } else {
-    newColor = "blue"; 
-  }
-  h1.style.color = newColor; //newColor 변수가 h1의 style 요소라는 것을 알려줌.
+    h1.className = clickedClass
+  } // 만약 h1의 className이 없다면, class name을 active로 추가한다.
 }
-
 h1.addEventListener("click", handleTitleClick);
+// 이 방법은 className이 말그대로 과거따위는 신경 안쓰고 교체해버리기 때문에 html에서 만든 class를 없애버림.
