@@ -1,12 +1,6 @@
 const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick() {
-  const clickedClass = "clicked"
-  if (h1.classList.contains(clickedClass)) {
-    h1.classList.remove(clickedClass); // h1의 class name이 active라면 active를 제거하기 위해 h1.className을 비워줌.
-  } else {
-    h1.classList.add(clickedClass);
-  } // 만약 h1의 className이 없다면, class name을 active로 추가한다.
+  h1.classList.toggle("clicked"); // toggle을 사용하면 가장 간단하게(한 줄의 코드로) css를 자바스크립트에 반영할 수 있음.
 }
 h1.addEventListener("click", handleTitleClick);
-// 이 방법은 className이 말그대로 과거따위는 신경 안쓰고 교체해버리기 때문에 html에서 만든 class를 없애버림.
