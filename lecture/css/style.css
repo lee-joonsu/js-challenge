@@ -15,24 +15,24 @@ img {
 }
 
 body {
-  color: white;
+  color: beige;
   text-align: center;
   margin-top: 60px;
-}
-
-#todo-form {
-  padding-bottom: 200px;
 }
 #login-form {
   padding-bottom: 50px;
 }
 #clock {
   font-size: 40px;
+  padding-top: 15px;
 }
 #greeting {
   padding-bottom: 30px;
   font-size: 50px;
 }
 #quote {
+  font-size: 25px;
+}
+#todo-list {
   font-size: 25px;
 }
