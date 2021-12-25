@@ -2,12 +2,21 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
+function deleteToDo(event) {
+  const li = event.target.parentElement; // 이게 우리가 삭제하고 싶은 li임.
+  li.remove();
+}
+
 function paintTodo(newTodo) {
   const list = document.createElement("li");
   const span = document.createElement("span");
-  list.appendChild(span); // span을 li 안에 넣는 방법
   span.innerText = newTodo;
+  const button = document.createElement("button");
+  button.innerText = "❌";
+  button.addEventListener("click", deleteToDo);
+  list.appendChild(span); // span을 li 안에 넣는 방법
   toDoList.appendChild(list);
+  list.appendChild(button);
 } // todo를 그리는 역할을 담당. 여기서 인수 newTodo는 text임.
 
 function handleToDoSubmit(event) {
