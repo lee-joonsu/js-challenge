@@ -1,3 +1,7 @@
 .hidden {
   display: none;
-} /* 어떤 요소에게든 이 class name을 주면 그 요소를 숨기게 함. 
+} /* 어떤 요소에게든 이 class name을 주면 그 요소를 숨기게 함. */
+
+img {
+  background: cover no-repeat fixed center;
+}
