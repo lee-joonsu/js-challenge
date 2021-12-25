@@ -1,4 +1,4 @@
-const images = ["0.jpg", "1.jpg", "2.jpg"];
+const images = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"];
 // 문서에 저장된 이미지를 image array로 불러옴.
 // 폴더 안에 있는 이미지 이름들은 javascript 파일에서도 똑같이 쓰임.
 
