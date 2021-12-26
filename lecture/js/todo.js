@@ -12,13 +12,15 @@ function saveToDos() {
 // JSON.stringify는 자바스크립트 object나 array 또는 어떤 자바스크립트 코드건 간에 그걸 string으로 만들어 줌.
 function deleteToDo(event) {
   const li = event.target.parentElement; // 이게 우리가 삭제하고 싶은 li임.
+  console.log(li.id);
   li.remove();
 }
 
 function paintTodo(newTodo) {
   const list = document.createElement("li");
+  list.id = newTodo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
@@ -31,8 +33,13 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value; // 이 시점에서 우리가 하는 건 input의 value를 새로운 변수에 복사하는 것임.
   toDoInput.value = "";
-  toDos.push(newTodo); // newToDo를 그리기 전에 newTodo 변수를 toDos array로 보냄.
-  paintTodo(newTodo); // paintTodo 함수에게 newTodo 변수를 보냄.
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(), // 현재의 시간을 밀리초(1000분의 1초)로 주는 함수임.
+    // 이 초들이 거의 랜덤처럼 보이기 때문에 이걸 id로 사용할 것임.
+  };
+  toDos.push(newTodoObj); // newToDo를 그리기 전에 newTodo 변수를 toDos array로 보냄.
+  paintTodo(newTodoObj); // paintTodo 함수에게 newTodo 변수를 보냄.
   saveToDos(); // toDos array를 localStorage에 집어넣는 역할을 함.
 }
 
