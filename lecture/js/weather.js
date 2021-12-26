@@ -7,10 +7,10 @@ function onGeoOk(position) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const weather = document.querySelector("#weather span:first-child");
-      const city = document.querySelector("#weather span:last-child");
-      city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+      const city = document.querySelector("#weather span:first-child");
+      const weather = document.querySelector("#weather span:last-child");
+      city.innerText = `나의 위치: ${data.name}`;
+      weather.innerText = `날씨: ${data.weather[0].main} / 온도: ${data.main.temp}°C`;
     }); // url을 부르는 방법. 웹문서 검사에서 network에서 확인할 수 있음.
   // 자바스크립트에서 URL로 요청함.
 } // 위치를 얻는데 성공했을 때

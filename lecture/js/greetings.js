@@ -15,7 +15,7 @@ function LoginSubmit(event) {
 } // local storage에 뭔가를 저장하면 paintGreetings를 호출하는 순간에 그 유저정보는 이미 local storage에 저장됨.
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Hello ${username} Have a nice day~!`;
   greeting.classList.remove(HIDDEN_className);
 } // 겹치는 것 함수로 만듦. 위에 함수안에 들어있는 내용이 겹치는 내용임.
 

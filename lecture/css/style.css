@@ -41,21 +41,21 @@ body {
 
 #greeting {
   font-size: 50px;
-  text-shadow: gray 10px;
+  text-shadow: 1px 1px 1px black;
 }
 
 #todo-form input {
-  width: 250px;
-  height: 25px;
+  width: 500px;
+  height: 35px;
   border: 0px;
-  border-radius: 5px;
-  font-size: 15px;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 #todo-list {
   font-size: 30px;
-  list-style-position: inside;
-  text-shadow: 2px 2px 2px black;
+  list-style: inside square;
+  text-shadow: 1px 1px 1px black;
 }
 
 #clock {
@@ -70,6 +70,14 @@ body {
 }
 
 button {
+  height: 25px;
   margin-left: 15px;
   border-radius: 50%;
+  border: none;
+  
+}
+
+#weather {
+  padding-bottom: 20px;
+  font-size: 20px;
 }
