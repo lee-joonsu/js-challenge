@@ -11,28 +11,65 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 100%;
+  opacity: 90%;
 }
 
 body {
   color: beige;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 25px;
 }
 #login-form {
-  padding-bottom: 50px;
-}
-#clock {
-  font-size: 40px;
-  padding-top: 15px;
-}
-#greeting {
   padding-bottom: 30px;
-  font-size: 50px;
 }
+
+.name {
+  width: 200px;
+  height: 25px;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.login {
+  height: 20px;
+  border: 0px;
+  border-radius: 3px;
+  background-color: rebeccapurple;
+  color: white;
+}
+
+#greeting {
+  font-size: 50px;
+  text-shadow: gray 10px;
+}
+
+#todo-form input {
+  width: 250px;
+  height: 25px;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+#todo-list {
+  font-size: 30px;
+  list-style-position: inside;
+  text-shadow: 2px 2px 2px black;
+}
+
+#clock {
+  font-size: 50px;
+  text-shadow: 1px 1px 1px black;
+}
+
 #quote {
   font-size: 25px;
+  padding-bottom: 5px;
+  text-shadow: 1px 1px 1px darkgray;
 }
-#todo-list {
-  font-size: 25px;
+
+button {
+  margin-left: 15px;
+  border-radius: 50%;
 }
