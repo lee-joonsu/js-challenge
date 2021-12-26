@@ -10,11 +10,14 @@ function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 } // toDos array의 내용을 localStorage에 넣는 것임.
 // JSON.stringify는 자바스크립트 object나 array 또는 어떤 자바스크립트 코드건 간에 그걸 string으로 만들어 줌.
+
 function deleteToDo(event) {
   const li = event.target.parentElement; // 이게 우리가 삭제하고 싶은 li임.
-  console.log(li.id);
   li.remove();
-}
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // 우리가 클릭한 li.id와 다른 toDo는 남겨두고 싶음.
+  // toDo.id는 데이터 타입이 number이지만, li.id는 string임. li.id를 parseInt()시켜야 함.
+  saveToDos(); // toDos DB에서 todo를 지운 뒤에 saveToDos를 한번 더 불러야 함.
+} 
 
 function paintTodo(newTodo) {
   const list = document.createElement("li");
@@ -55,3 +58,10 @@ if (savedToDos !== null) {
   // paintTodo는 텍스트를 받는데 자바스크립트는 그 텍스트를 paintTodo에게 전달해주기 때문.
   // 텍스트는 newTodo이며 그것들은 우리 array에 있는 각각의 item임.
 }
+
+function sexyFilter() {} // 만약 새 array에서도 이[1, 2, 3, 4]를 포함하고 싶다면
+// 이 function은 반드시 true를 리턴해야 됨.
+// 만약 false를 리턴한다면 그 item은 새 array에 포함되지 않을 것임.
+
+[1, 2, 3, 4].filter(sexyFilter);
+// 이 뜻은 자바스크립트가 sexyFilter를 4번 부르는 것임.
