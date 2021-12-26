@@ -58,10 +58,3 @@ if (savedToDos !== null) {
   // paintTodo는 텍스트를 받는데 자바스크립트는 그 텍스트를 paintTodo에게 전달해주기 때문.
   // 텍스트는 newTodo이며 그것들은 우리 array에 있는 각각의 item임.
 }
-
-function sexyFilter() {} // 만약 새 array에서도 이[1, 2, 3, 4]를 포함하고 싶다면
-// 이 function은 반드시 true를 리턴해야 됨.
-// 만약 false를 리턴한다면 그 item은 새 array에 포함되지 않을 것임.
-
-[1, 2, 3, 4].filter(sexyFilter);
-// 이 뜻은 자바스크립트가 sexyFilter를 4번 부르는 것임.
