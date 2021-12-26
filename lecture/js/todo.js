@@ -4,8 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = []; // array를 만듦. newToDo가 그려질 때마다 그 텍스트를 array에 push함(넣음).
-// toDos array를 localStorage에 넣기
+let toDos = []; // 값이 바뀔 수 있도록 let으로 변수 선언. 빈값에서 시작함.
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -39,14 +38,13 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello(item) { // 자바스크립트는 지금 처리되고 있는 item 또한 그냥 제공해줌.  
-  console.log("this is the turn of", item);
-} // sayHello 함수를 길게 나타내는 방법
-
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
-  parsedToDos.forEach((item) => console.log("this is the turn of", item)); // sayHello function을 짧게 나타내는 방법. arrow function이라고 함.
-  // forEach는 각각의 item에 대해 sayHello function을 실행시킴.
+  // JSON.parse()는 단순한 string을 javaScript가 이해할 수 있는 살아있는 array로 만드는 함수임.
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintTodo); // paintTodo만 호출하면 됨.
+  // paintTodo는 텍스트를 받는데 자바스크립트는 그 텍스트를 paintTodo에게 전달해주기 때문.
+  // 텍스트는 newTodo이며 그것들은 우리 array에 있는 각각의 item임.
 }
